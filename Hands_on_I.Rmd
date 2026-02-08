@@ -181,7 +181,13 @@ html_table1_format <- tags$table(
   )
 )
 
-
+###
+#In this exercise, we have recreated the table from the paper using the features available in the supplementary dataset. 
+#The only difference between our table and the one in the paper is the gender distribution in the non-severe group: 
+#the paper reports 25 males and 12 females, whereas our data show 23 males and 14 females. 
+#This discrepancy is not a technical error. We have cross-checked the dataset in Excel, and the numbers match our table. 
+#It is possible that the authors made a misreporting or updated values during the experiment.
+###
 
 
 ```
@@ -241,6 +247,17 @@ miss_table_1 + theme(
   axis.title = element_text(size = 12),
   plot.margin = margin(5, 5, 5, 5)  # top, right, bottom, left
 )
+
+# Discussion
+#We generated several visualizations using the cleaned dataset to explore how different parameters relate to disease severity.
+#In the first graph, we examined the effect of age on disease groups and observed a clear increase in the number of severe cases
+#with increasing age. In the second graph, we analyzed the BMI distribution and did not find any notable association with disease severity.
+#In the third graph, we explored disease distribution by gender. At first glance, the disease appears more prevalent in males;
+#however, this is likely due to the dataset containing nearly twice as many males as females.
+#In the fourth graph, we visualized the proportion of missing data in the dataset. We observed that nearly 28% of the data are missing,
+#and that more than 20% of the clinical parameters are missing overall, indicating potential data quality issues.
+#Finally, in the fifth graph, we used boxplots to compare clinical parameters between severity groups. We observed that severe cases
+#generally present lower values for most parameters, except for certain variables such as glucose levels.
 
 ```
 
@@ -514,6 +531,16 @@ ggplot(heatmap_means, aes(x = biomarker, y = group_label, fill = z_score)) +
 # Conclusion
 
 Write a concise conclusion (1 paragraphs) summarizing the main differences observed across the three patient groups based on the twelve clinical parameters. Support your statements with evidence from your analyses.
+
+It is difficult to identify a clear overall trend. However, several parameters appear to be higher
+in the severe groups compared with the non COVID group. These include alanine aminotransferase,
+aspartate aminotransferase, C reactive protein, creatinine, direct bilirubin, glucose, and
+glutamyltransferase. These difference are observed when the data are separated by sex, in which
+males generally show higher levels of these parameters
+
+In contrast, lymphocyte count, monocyte count, platelet count, total bilirubin, and white blood
+cell count tend to be slightly higher in the non COVID group respect to the COVID severe group.
+
 
 # session info {.unnumbered}
 
